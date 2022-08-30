@@ -39,7 +39,7 @@ class Tasks(Document):
     @classmethod
     async def find_task_using_todo_id(cls, task_id: UUID):
         try:
-            return await cls.find_one(cls.todo_id==task_id)
+            return await cls.find_one(cls.todo_id == task_id)
         except Exception as e:
             print(e)
             return {'Error': 'Unable to find the todo task.'}
@@ -54,7 +54,6 @@ class Tasks(Document):
         except Exception as e:
             print(e)
             return None
-
 
     @classmethod
     async def delete_task(cls, task_id: UUID):

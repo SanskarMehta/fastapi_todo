@@ -26,7 +26,6 @@ class Settings(BaseSettings):
     MAIL_SSL: bool = False
     USE_CREDENTIALS: bool = True
     MONGODB_DATABASE_URL: str
-
     # JWT Token configuration
     JWT_TOKEN_EXPIRES: timedelta = timedelta(hours=48)
     JWT_ALGORITHM: str = "HS384"
@@ -126,7 +125,6 @@ class DevelopmentConfig(Config):
     DEBUG: bool = True
     TESTING: bool = True
     MONGODB_DATABASE_URL = Settings().MONGODB_DATABASE_URL
-
 
 class ProductionConfig(Config):
     """
